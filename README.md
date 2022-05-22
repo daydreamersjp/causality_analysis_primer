@@ -78,19 +78,18 @@ $<br \ >$
 
 Therefore,
 
-$ATE$
+$$
+\begin{aligned}
+ATE \ & = \ \mathbb{E}[Y_{a=1} \ - \ Y_{a=0}] \\
+& = \ \mathbb{E}[Y_{a=1}] \ - \ \mathbb{E}[Y_{a=0}] \\
+& = \ \mathbb{E}[Y_{a=1}|A=1] \ - \ \mathbb{E}[Y_{a=0}|A=0] \\
+& = \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0] \\
+& = \ treatment \ effect \ calculated \ under \ RCT
+\end{aligned}
+$$
 
-$= \ \mathbb{E}[Y_{a=1} \ - \ Y_{a=0}]$
 
-$= \ \mathbb{E}[Y_{a=1}] \ - \ \mathbb{E}[Y_{a=0}]$
-
-$= \ \mathbb{E}[Y_{a=1}|A=1] \ - \ \mathbb{E}[Y_{a=0}|A=0]$
-
-$= \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0]$
-
-$= \ treatment \ effect \ calculated \ under \ RCT$
-
-Where the third line to the fourth uses *exchangeability* and the four to the fifth uses *consistency*.
+Where the second line to the third uses *exchangeability* and the third to the fourth uses *consistency*.
 
 Now, it proves the $ATE \ = \ treatment \ effect \ calculated \ under \ RCT$
 
@@ -122,10 +121,17 @@ When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$,
 
 Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) for $a=a'$ is given by:
 
-$\hat{\mu}^{IPWE}\_{a'} \ = \ \frac{1}{n} \sum^{n}\_{i=1}Y\_{i} \frac{1\_{A\_{i}=a'}{P[A\_{i}=a']}$
+$\hat{\mu}^{IPWE}\_{a'} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{1_{A_i=a'}}{P[A_i=a']}$
 
+This *IPWE* is an unbiased estimator of $Y_{a=a'}$, namely $\mathbb{E}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$.
 
-$\hat{\mu}^{IPWE}\_{a'} \ = \ \sum\limits_{i=1}^{n} Y_{i}$
+$<br \ >$
+
+Here's the proof of this property:
+
+---
+
+---
 
 $<br \ ><br \ >$
 
