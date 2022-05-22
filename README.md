@@ -62,6 +62,8 @@ $<br \ >$
 
 Here's the proof of this property:
 
+------------------
+
 When $A$ is assigned randomly, $Y_{a} \perp A$ for $a \ \in \ \{0,1\}$. This leads to:
 
 $Y_{a=1} \ = \ Y_{a=1}|(A=1) \ = \ Y_{a=1}|(A=0)$ and $Y_{a=0} \ = \ Y_{a=0}|(A=0) \ = \ Y_{a=0}|(A=1)$, (also known as *exchangeability*).
@@ -88,9 +90,11 @@ $= \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0]$
 
 $= \ treatment \ effect \ calculated \ under \ RCT$
 
-Wher the third line to the fourth uses *exchangeability* and the four to the fifth uses *consistency*.
+Where the third line to the fourth uses *exchangeability* and the four to the fifth uses *consistency*.
 
 Now, it proves the $ATE \ = \ treatment \ effect \ calculated \ under \ RCT$
+
+------------------
 
 $<br \ >$
 
