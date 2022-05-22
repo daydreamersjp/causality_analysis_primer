@@ -12,7 +12,7 @@ XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 
 $<br \ ><br \ >$
 
-# ATE and ATT
+# ATE (Average Treatment Effect) and ATT (Average Treatment Effect of the Treated)
 
 Suppose $Y$ is an outcome random variable, $A$ is a indicator variable to represent the presence of treatment, for example $A={0,1}$ in binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population administered the insulin, while $A=0$ is for not administered.
 
