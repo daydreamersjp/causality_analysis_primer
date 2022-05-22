@@ -1,4 +1,35 @@
+# Why Does Causality Analysis Matter?
+
+Here we define the *Causality Analysis* is a field of study to establish the relationship between cause and effect from the data. Why does it matter though?
+
+In a sentence, that is because **"correlation does not indicate the causation"**.
+
+<a href="https://www.wnycstudios.org/podcasts/otm/articles/spurious-correlations">Deaths by Swimming Pool Drowning vs. Nicholas Cage Films</a> a famous example of this statement.
+
+![](https://i.imgur.com/q54sO25.png)
+
+Although "the number of people who drowned by falling into the swimming pool" is correlated with "the number of films Nicolas Cage appeared in", it does not mean they have causal relationship (no proof, but just by common sense!)
+
+Therefore, this is an easy example of correlation != causation, period.
+
+$<br \ >$
+
+Although it is true, there is further implication in the data science field: it matters when we want to know the **influence by the actions changing a part of the system**. In the example above, *decreasing the Nicolas Cage's films does not lead to the decrease in the pool accidents* (again no proof but in common sense.)
+
+But there are many cases that this kind of effect is what we actually want to know, for example:
+- how likely a patient can be treated if the doctor administered a drug,
+- how likely we see more conversions if a marketing campaign went-live,
+- how likely the city can gain more budget when a tax policy was enforced,
+- etc.
+
+This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $P(Y=y | A)$ vs. $P(Y=y | do(A))$, but this difference is something we should carefully concern and distinguish.
+
+
+$<br \ ><br \ >$
+
 # Concept of Counterfactual
+
+In *causality analysis*, smacking *counterfactual* property of the real world is the key to approach the size of effect we would like to know.
 XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
 
 $<br \ ><br \ >$
@@ -154,4 +185,5 @@ $<br \ ><br \ >$
 # Reference
 
 - "Causal Inference: What If", Miguel A. Hernan, James M. Robins, CRC Press, https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
+- "CAUSALITY", Ricardo Silva, Cambridge Advanced Tutorial Lecture Series on Machine Learning, http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf
 
