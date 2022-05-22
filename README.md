@@ -47,7 +47,7 @@ A guru of causality analysis, Donald Rubin called this counterfactual aspect of 
 
 $<br \ >$
 
-As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strengh of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>
+As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strengh of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>, yet because RCT is not always possible to conduct, the importance of causality analysis still remains. We will discuss more in the later sections.
 
 $<br \ ><br \ >$
 
