@@ -8,17 +8,23 @@ For example, $Y_{a=1} | A=0$ can give the random variable of *HbA1C* for the pat
 
 Here the $ATE$ (Average Treatment Effect) and $ATT$ (Average Treatment Effect of the Treated) are introduced.
 
+$<br \ >$
+
 ## *ATE* (Average Treatment Effect)
 
 $ATE = \mathbb{E}[Y_{a=1}-Y_{a=0}]$
 
 This represents the expectation of the effect of the treatment in a sense it takes the difference of the outcome random variables, the former is if whole population was set in the treated group while the latter is if set in the non-treated group.
 
+$<br \ >$
+
 ## *ATT* (Average Treatment Effect of the Treated)
 
 $ATT = \mathbb{E}[Y_{a=1}-Y_{a=0}|A=1]$
 
 This represents the similar expectatino of effect to *ATE* with the only difference in the random variable in interest are only from the population who was actually treated because it is conditioned by $A=1$.
+
+$<br \ >$
 
 ## *ATE* vs. *ATT* in an example
 
@@ -27,6 +33,13 @@ Let's describe the difference of *ATE* and *ATT* in English with an example of i
 *ATE* is the expected effect of insulin (e.g. decrease in HbA1C) against the entire population in interest.
 
 *ATT* is the expected effect of insulin against the population who was actually given insulin, and disregarding the population who was not given insulin--supposedly they are severer diabetic patients because the physicians found out they should take the insulin.
+
+$<br \ >$
+
+## Rondomized control trial
+
+
+
 
 $<br \ >$
 
