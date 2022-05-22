@@ -48,9 +48,9 @@ Let's describe the difference of *ATE* and *ATT* in English with an example of i
 
 - *ATT* is the expected effect of insulin against the population who was actually given insulin, and disregarding the population who was not given insulin--supposedly they are severer diabetic patients because the physicians found out they should take the insulin.
 
-$<br \ >$
+$<br \ ><br \ >$
 
-## Rondomized control trial
+# Rondomized control trial
 
 If the treatment assignment is randomly controlled, the assignment of $A$ is random, *ATE* is equivalent to
 
@@ -102,13 +102,15 @@ This indicates that under the RCT set up, it is possible to say that the differe
 
 $<br \ >$
 
+# Population Bias
+
 Although this is true, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc., as well as there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated.
 
 The challenge appears though when using observational data. Primarily, the lack of $Y_{a} \perp A$ or *exchangeability* is an issue. In plain English, this means the outcome for the treated group and the outcome for the untreated group are not equivalent. For examples:
 - the effect of insulin is not the same to the patients who are administered and the ones who are not; because it depends on the doctors' discretions and the former patient group is supposedly under severer condition than the latter.
-- the effect of marketing campaign such as coupon distribution is not the same to the customers who received the coupon and the ones who do not; because the marketing team's discretion and the former customer group is supposedly promising and sensitive to the campaign than the latter.
+- the effect of marketing campaign such as coupon distribution is not the same to the customers who received the coupon and the ones who do not; because it depends on the marketing team's discretion and the former customer group is supposedly promising and sensitive to the campaign than the latter.
 
-Next section shows how we can tackle this limitation and get the unbiased estimate of the treatment effect.
+In general, these limitations are just called **population bias**. Next section shows how we can tackle it and get the unbiased estimate of the treatment effect.
 
 $<br \ ><br \ >$
 
