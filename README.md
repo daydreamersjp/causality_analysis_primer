@@ -1,5 +1,7 @@
 # Concept of Counterfactual
-XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
+
+$<br \ ><br \ >$
 
 # Approaches to Reach Couterfactual in Special Circumstances
 - DID
@@ -8,6 +10,7 @@ XXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
 
+$<br \ ><br \ >$
 
 # ATE and ATT
 
@@ -91,7 +94,7 @@ Now, it proves the $ATE \ = \ treatment \ effect \ calculated \ in \ RCT$
 
 $<br \ >$
 
-This indicates that under the RCT set up, it is possible to say that the difference in plain averages of each groups (treatment/non-treatment (control)) directly becomes the unbiased estimate of the ATE.
+This indicates that under the RCT set up, it is possible to say that the difference in plain averages of each group (treatment/non-treatment (control)) directly becomes the unbiased estimate of the ATE.
 
 $<br \ >$
 
@@ -103,7 +106,7 @@ $<br \ ><br \ >$
 
 When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT*. This method is called Inversed Probability Weighting.
 
-$<br \ >$
+$<br \ ><br \ >$
 
 # Reference
 
