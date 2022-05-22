@@ -110,7 +110,7 @@ The challenge appears though when using observational data. Primarily, the lack 
 - the effect of insulin is not the same to the patients who are administered and the ones who are not; because it depends on the doctors' discretions and the former patient group is supposedly under severer condition than the latter.
 - the effect of marketing campaign such as coupon distribution is not the same to the customers who received the coupon and the ones who do not; because it depends on the marketing team's discretion and the former customer group is supposedly promising and sensitive to the campaign than the latter.
 
-In general, these limitations are just called **population bias**. Next section shows how we can tackle it and get the unbiased estimate of the treatment effect.
+In general, this limitation is just called **population bias**. Next section shows one of the possible approaches we can take to tackle this limitation and get the unbiased estimate of the treatment effect.
 
 $<br \ ><br \ >$
 
