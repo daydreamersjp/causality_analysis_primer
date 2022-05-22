@@ -120,7 +120,12 @@ $<br \ ><br \ >$
 
 When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
-Under the observational data, we have a set of 
+Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) for $a=a'$ is given by:
+
+$\hat{\mu}^{IPWE}\_{a'} \ = \ \frac{1}{n} \sum^{n}\_{i=1}Y\_{i} \frac{1\_{A\_{i}=a'}{P[A\_{i}=a']}$
+
+
+$\hat{\mu}^{IPWE}\_{a'} \ = \ \sum\limits_{i=1}^{n} Y_{i}$
 
 $<br \ ><br \ >$
 
