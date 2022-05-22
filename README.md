@@ -86,11 +86,11 @@ $= \ \mathbb{E}[Y_{a=1}|A=1] \ - \ \mathbb{E}[Y_{a=0}|A=0]$
 
 $= \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0]$
 
-$= \ treatment \ effect \ calculated \ in \ RCT$
+$= \ treatment \ effect \ calculated \ under \ RCT$
 
 Wher the third line to the fourth uses *exchangeability* and the four to the fifth uses *consistency*.
 
-Now, it proves the $ATE \ = \ treatment \ effect \ calculated \ in \ RCT$
+Now, it proves the $ATE \ = \ treatment \ effect \ calculated \ under \ RCT$
 
 $<br \ >$
 
