@@ -102,13 +102,19 @@ This indicates that under the RCT set up, it is possible to say that the differe
 
 $<br \ >$
 
-Although this is true, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc., as well as there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated. 
+Although this is true, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc., as well as there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated.
+
+The challenge appears though when using observational data. Primarily, the lack of $Y_{a} \perp A$ or *exchangeability* is an issue. In plain English, this means the outcome for the treated group and the outcome for the untreated group are not equivalent. For examples:
+- the effect of insulin is not the same to the patients who are administered and the ones who are not; because it depends on the doctors' discretions and the former patient group is supposedly under severer condition than the latter.
+- the effect of marketing campaign such as coupon distribution is not the same to the customers who received the coupon and the ones who do not; because the marketing team's discretion and the former customer group is supposedly promising and sensitive to the campaign than the latter.
+
+Next section shows how we can tackle this limitation and get the unbiased estimate of the treatment effect.
 
 $<br \ ><br \ >$
 
 # Inverse Probability Weighting
 
-When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT*. This method is called Inversed Probability Weighting.
+When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
 $<br \ ><br \ >$
 
