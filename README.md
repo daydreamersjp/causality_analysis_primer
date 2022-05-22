@@ -14,7 +14,7 @@ Therefore, this is an easy example of correlation != causation, period.
 
 $<br \ >$
 
-Although it is true, there is further implication in the data science field: it matters when we want to know the **influence by the actions changing a part of the system**. In the example above, *decreasing the Nicolas Cage's films does not lead to the decrease in the pool accidents* (again no proof but in common sense.)
+Although it is true, there is further implication in the data science field: it matters when we want to know the **influence by the actions changing a part of the system**. In the example above, <ins>decreasing the Nicolas Cage's films does not lead to the decrease in the pool accidents</ins> (again no proof but in common sense.)
 
 But there are many cases that this kind of effect is what we actually want to know, for example:
 - how likely a patient can be treated if the doctor administered a drug,
@@ -22,7 +22,7 @@ But there are many cases that this kind of effect is what we actually want to kn
 - how likely the city can gain more budget when a tax policy was enforced,
 - etc.
 
-This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $P(Y=y | A)$ vs. $P(Y=y | do(A))$, but this difference is something we should carefully concern and distinguish.
+This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $P(Y=y | A)$ vs. $P(Y=y | do(A))$. No matter how it is called, this difference is something we should carefully concern and distinguish.
 
 
 $<br \ ><br \ >$
