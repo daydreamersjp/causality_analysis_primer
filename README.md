@@ -100,7 +100,7 @@ $<br \ ><br \ >$
 
 # Rondomized control trial
 
-If the treatment assignment is randomly controlled, the assignment of $A$ is random, *ATE* is equivalent to
+If the treatment assignment is randomly controlled where the assignment of $A$ is random, the calculation of *ATE* is much easier, because it is equivalent to the average of observed outcomes in each group:
 
 $\mathbb{E}[Y|(A=1) \ - \ Y|(A=0)] \ = \ \mathbb{E}[Y|(A=1)] \ - \ \mathbb{E}[Y|(A=0)]$.
 
