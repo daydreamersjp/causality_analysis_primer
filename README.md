@@ -1,3 +1,14 @@
+# Concept of Counterfactual
+XXXXXXXXXXXXXXXXXXXX
+
+# Heuristic Approaches to Reach Couterfactual 
+- DID
+- RDD
+- Instrumental Variable (IV) Estimation
+
+XXXXXXXXXXXXXXXXXXXX
+
+
 # ATE and ATT
 
 Suppose $Y$ is an outcome random variable, $A$ is a indicator variable to represent the presence of treatment, for example $A={0,1}$ in binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population administered the insulin, while $A=0$ is for not administered.
@@ -30,7 +41,7 @@ $<br \ >$
 
 Let's describe the difference of *ATE* and *ATT* in English with an example of insulin patient. 
 
-*ATE* is the expected effect of insulin (e.g. decrease in HbA1C) against the entire population in interest.
+*ATE* is the expected effect of insulin (e.g. decrease in *HbA1C*) against the entire population in interest.
 
 *ATT* is the expected effect of insulin against the population who was actually given insulin, and disregarding the population who was not given insulin--supposedly they are severer diabetic patients because the physicians found out they should take the insulin.
 
@@ -38,10 +49,24 @@ $<br \ >$
 
 ## Rondomized control trial
 
-
-
+If the treatment assignment is randomly controlled, the assignment of $A$ is random, *ATE* is equivalent to $\mathbb{E}[Y|A=1 \ - \ Y|A=0] \ = \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0]$. In the insulin example, this happens when the patients given insulin are the ones selected randomly with no influence from any attributional factors such as the disease severity, age, or etc. In this situation, we can get the effect of insulin by just taking the average of difference of *HbA1C* in the population assigned to treatment group and that in the population assigned to non-treatment group.
 
 $<br \ >$
 
+[!!!!THIS PART IS NOT COMPLETE!!!!]
+Here's the proof of this property:
 
+When $A$ is assigned randomly, this means that $Y \perp A$ holds. Therefore, $Y_{a=1} \ = \ Y_{a=1}|A=1 \ = \ Y_{a=1}|A=0$ and $Y_{a=0} \ = \ Y_{a=0}|A=0 = \ Y_{a=0}|A=1$. This easily leads to $\mathbb{E}[Y_{a=1}-Y_{a=0}] \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}|A]$.
+
+$<br \ >$
+
+Although this is true, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc., as well as there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated. 
+
+$<br \ ><br \ >$
+
+# Inverse Probability Weighting
+
+When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT*. This method is called Inversed Probability Weighting.
+
+$<br \ >$
 
