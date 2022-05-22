@@ -24,7 +24,7 @@ This represents the similar expectatino of effect to *ATE* with the only differe
 
 Let's describe the difference of *ATE* and *ATT* in English with an example of insulin patient. 
 
-*ATE* is the expected effect of insulin against the entire population in interest.
+*ATE* is the expected effect of insulin (e.g. decrease in HbA1C) against the entire population in interest.
 
 *ATT* is the expected effect of insulin against the population who was actually given insulin, and disregarding the population who was not given insulin--supposedly they are severer diabetic patients because the physicians found out they should take the insulin.
 
