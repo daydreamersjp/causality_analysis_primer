@@ -22,15 +22,32 @@ But there are many cases that this kind of effect is what we actually want to kn
 - how likely the city can gain more budget when a tax policy was enforced,
 - etc.
 
-This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $P(Y=y | A)$ vs. $P(Y=y | do(A))$. No matter how it is called, this difference is something we should carefully concern and distinguish.
+This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $E[Y=y | A]$ vs. $E[Y=y | do(A)]$. No matter how it is called, this difference is something we should carefully concern and distinguish.
 
 
 $<br \ ><br \ >$
 
 # Concept of Counterfactual
 
-In *causality analysis*, smacking *counterfactual* property of the real world is the key to approach the size of effect we would like to know.
-XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
+In *causality analysis*, smacking *counterfactual* property of the real world is the key to approach to measure the effect in our interest.
+
+Imagine that we have sent out campaign mails to selected customer groups (by possible propensity of reaction or etc.). We have two customer groups: one who received the mail, the other who didn't. Each of them returns some responses to the mail.
+
+![](./data/image/counterfactual_1.jpg)
+
+In this exhibit, we only have the data for *(1)* and *(4)*. Unfortunately, the difference between *(1)* and *(4)* does not represent the causal effect in general, and biased. This is because when we send a campaign mail, we already see the customers attributes, past sales, etc. and cherry-pick them. The customers we send the mail is possibly the customers who are aready likely to respond positively. If that is the case, the campgain effect is overestimated.
+
+![](./data/image/counterfactual_2.jpg)
+
+What we really want to konw is the difference between *(1)* and *(2)*, not *(4)*, and/or between *(3)* and *(4)*, not *(1)*. With that information, we can discuss the campaign mail has done the expected job.
+
+Since the information of *(2)* and *(3)* does not appear in the real world, it is called <b><ins>counterfactual</ins></b>. 
+
+A guru of causality analysis, Donald Rubin called this counterfactual aspect of the observed data as "the fundamental problem of causal inference" <a href="https://en.wikipedia.org/wiki/Rubin_causal_model#The_fundamental_problem_of_causal_inference">(Wikipedia)</a>
+
+$<br \ >$
+
+As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strengh of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>
 
 $<br \ ><br \ >$
 
