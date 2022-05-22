@@ -1,7 +1,7 @@
 # Concept of Counterfactual
 XXXXXXXXXXXXXXXXXXXX
 
-# Heuristic Approaches to Reach Couterfactual 
+# Approaches to Reach Couterfactual in Special Circumstances
 - DID
 - RDD
 - Instrumental Variable (IV) Estimation
