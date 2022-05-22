@@ -121,17 +121,33 @@ When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$,
 
 Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) for $a=a'$ is given by:
 
-$\hat{\mu}^{IPWE}\_{a'} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{1_{A_i=a'}}{P[A_i=a']}$
+$\hat{\mu}^{IPWE}\_{a'} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a'}}{P[A_i=a']}$
+
+Where the $\boldsymbol{1}\_{A_i=a'}$ represents an indicator function to give $1$ when $A_i=a'$ and $0$ otherwise.
+
+$<br \ >$
 
 This *IPWE* is an unbiased estimator of $Y_{a=a'}$, namely $\mathbb{E}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$.
+
+Then, we can conclude the *ATE* can be estimated such that
+
+$ ATE \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}] \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
+
+
 
 $<br \ >$
 
 Here's the proof of this property:
 
----
+------------------
 
----
+XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
+
+------------------
+
+$<br \ >$
+
+
 
 $<br \ ><br \ >$
 
