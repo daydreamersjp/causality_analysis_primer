@@ -14,11 +14,11 @@ $<br \ ><br \ >$
 
 # ATE (Average Treatment Effect) and ATT (Average Treatment Effect of the Treated)
 
-Suppose $Y$ is an outcome random variable, $A$ is a indicator variable to represent the presence of treatment, for example $A={0,1}$ in binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population administered the insulin, while $A=0$ is for not administered.
+Suppose $Y$ is an outcome random variable, $A$ is a indicator variable to represent the presence of treatment, for example $A \in \lbrace 0,1 \rbrace$ in binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population is administered the insulin, while $A=0$ is for not administered.
 
-Also, suppose $Y_{a}$ is an outcome when the treatment is SET to $a$; for example, $Y_{a=1}$ is an outcome random variable when the treatment class is $1$ regardless of the actual treatment applied in observing $Y$. This means the random variable $Y_{a=1} | A=0$ can exist and this represents the 'what-if' random variable $Y$ in a sense that it is the random variable under the condition of not being treated ( $A=0$ ) but what if it was treated ( $a=1$ ).
+Also, suppose $Y_{a}$ is an outcome when the treatment is SET to $a$; for example, $Y_{a=1}$ is an outcome random variable when the treatment class is $1$ regardless of the actual treatment applied in observing $Y$. This means the random variable $Y_{a=1} | A=0$ can exist and this represents the 'what-if' value of $Y$ in a sense that it is the random variable under the condition of not being treated ( $A=0$ ) but what if it was treated ( $a=1$ ).
 
-For example, $Y_{a=1} | A=0$ can give the random variable of *HbA1C* for the patient group who was not administered the insulin but in the case if they had been administered. 
+For example, $Y_{a=1} | A=0$ can give the random variable of *HbA1C* for the patient group who was not administered the insulin but in the virtual case if they had been administered. 
 
 Here the $ATE$ (Average Treatment Effect) and $ATT$ (Average Treatment Effect of the Treated) are introduced.
 
@@ -104,7 +104,7 @@ $<br \ >$
 
 # Population Bias
 
-Although this is true, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc., as well as there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated.
+Although it is true that RCT solves the issue in the estimate of treatment effect, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc., as well as there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated.
 
 The challenge appears though when using observational data. Primarily, the lack of $Y_{a} \perp A$ or *exchangeability* is an issue. In plain English, this means the outcome for the treated group and the outcome for the untreated group are not equivalent. For examples:
 - the effect of insulin is not the same to the patients who are administered and the ones who are not; because it depends on the doctors' discretions and the former patient group is supposedly under severer condition than the latter.
@@ -117,6 +117,8 @@ $<br \ ><br \ >$
 # Inverse Probability Weighting
 
 When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
+
+Under the observational data, we have a set of 
 
 $<br \ ><br \ >$
 
