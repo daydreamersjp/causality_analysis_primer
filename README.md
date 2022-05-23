@@ -181,7 +181,7 @@ This *IPWE* is an unbiased estimator of $Y_{a=a'}$, namely $\mathbb{E}[\hat{\mu}
 
 Then, we can conclude we can estimate the *ATE* such that
 
-
+$ ATE \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}] \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
 
 
 $<br \ >$
