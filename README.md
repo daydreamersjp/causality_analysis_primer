@@ -1,6 +1,6 @@
 # Why Does Causality Analysis Matter?
 
-Here we define the *Causality Analysis* as a field of study to establish the relationship between cause and effect from the data. Why does it matter though?
+Here we define the *Causality Analysis* is a field of study to establish the relationship between cause and effect from the data. Why does it matter though?
 
 In a sentence, that is because **"correlation does not indicate the causation"**.
 
@@ -8,18 +8,18 @@ In a sentence, that is because **"correlation does not indicate the causation"**
 
 ![](https://i.imgur.com/q54sO25.png)
 
-Although "the number of people who drowned by falling into the swimming pool" is correlated with "the number of films Nicolas Cage appeared in", it does not mean they have a causal relationship (no proof, but just by common sense!)
+Although "the number of people who drowned by falling into the swimming pool" is correlated with "the number of films Nicolas Cage appeared in", it does not mean they have causal relationship (no proof, but just by common sense!)
 
 Therefore, this is an easy example of correlation != causation, period.
 
 $<br \ >$
 
-Although it is true, there is a further implication in the data science field: it matters when we want to know the **influence of the actions changing a part of the system**. In the example above, <ins>decreasing the Nicolas Cage's films does not lead to a decrease in the pool accidents</ins> (again no proof but in common sense.)
+Although it is true, there is further implication in the data science field: it matters when we want to know the **influence by the actions changing a part of the system**. In the example above, <ins>decreasing the Nicolas Cage's films does not lead to the decrease in the pool accidents</ins> (again no proof but in common sense.)
 
-But there are many cases where this kind of effect is what we want to know, for example:
-- how likely can a patient be treated if the doctor administered a drug,
-- how likely do we see more conversions if a marketing campaign went live,
-- how likely can the city gain more budget when a tax policy was enforced,
+But there are many cases that this kind of effect is what we actually want to know, for example:
+- how likely a patient can be treated if the doctor administered a drug,
+- how likely we see more conversions if a marketing campaign went-live,
+- how likely the city can gain more budget when a tax policy was enforced,
 - etc.
 
 This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $E[Y=y | A]$ vs. $E[Y=y | do(A)]$. No matter how it is called, this difference is something we should carefully concern and distinguish.
@@ -29,29 +29,29 @@ $<br \ ><br \ >$
 
 # Concept of Counterfactual
 
-In *causality analysis*, smacking *counterfactual* property of the real world is the key approach to measure the effect in our interest.
+In *causality analysis*, smacking *counterfactual* property of the real world is the key to approach to measure the effect in our interest.
 
-Imagine that we have sent out campaign emails to selected customer groups (by the possible propensity of positive reaction, etc.). We have two customer groups: one who received the mail, the other who didn't. Each of them returns some responses to the mail.
+Imagine that we have sent out campaign mails to selected customer groups (by possible propensity of reaction or etc.). We have two customer groups: one who received the mail, the other who didn't. Each of them returns some responses to the mail.
 
 ![](./data/image/counterfactual_1.jpg)
 
-In this exhibit, we only have the data for *(1)* and *(4)*. Unfortunately, the difference between *(1)* and *(4)* does not represent the causal effect in general and is biased. This is because when we send a campaign mail, we already see the customers' attributes, past sales, etc., and cherry-pick them. The customers we send the mail are possibly the customers who are already likely to respond positively. If that is the case, the campaign effect is overestimated.
+In this exhibit, we only have the data for *(1)* and *(4)*. Unfortunately, the difference between *(1)* and *(4)* does not represent the causal effect in general, and biased. This is because when we send a campaign mail, we already see the customers attributes, past sales, etc. and cherry-pick them. The customers we send the mail is possibly the customers who are aready likely to respond positively. If that is the case, the campgain effect is overestimated.
 
 ![](./data/image/counterfactual_2.jpg)
 
-What we want to know is the difference between *(1)* and *(2)*, not *(4)*, and/or between *(3)* and *(4)*, not *(1)*. With that information, we can discuss whether the campaign mail has done the expected job.
+What we really want to konw is the difference between *(1)* and *(2)*, not *(4)*, and/or between *(3)* and *(4)*, not *(1)*. With that information, we can discuss the campaign mail has done the expected job.
 
 Since the information of *(2)* and *(3)* does not appear in the real world, it is called <b><ins>counterfactual</ins></b>. 
 
-A guru of causality analysis, Donald Rubin called this counterfactual aspect of the observed data "the fundamental problem of causal inference" <a href="https://en.wikipedia.org/wiki/Rubin_causal_model#The_fundamental_problem_of_causal_inference">(Wikipedia)</a>
+A guru of causality analysis, Donald Rubin called this counterfactual aspect of the observed data as "the fundamental problem of causal inference" <a href="https://en.wikipedia.org/wiki/Rubin_causal_model#The_fundamental_problem_of_causal_inference">(Wikipedia)</a>
 
 $<br \ >$
 
-As discussed later, RCT is one possible approach to overcome this problem and a method highly ranked in the hierarchy of the strength of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>, yet because RCT is not always possible to conduct, the importance of causality analysis still remains. We will discuss more in the later sections.
+As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strengh of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>, yet because RCT is not always possible to conduct, the importance of causality analysis still remains. We will discuss more in the later sections.
 
 $<br \ ><br \ >$
 
-# Approaches to Reach Counterfactual in Special Circumstances
+# Approaches to Reach Couterfactual in Special Circumstances
 - DID
 - RDD
 - Instrumental Variable (IV) Estimation
@@ -62,13 +62,11 @@ $<br \ ><br \ >$
 
 # ATE (Average Treatment Effect) and ATT (Average Treatment Effect of the Treated)
 
-Suppose $Y$ is an outcome random variable and $A$ is an indicator variable to represent the presence of treatment, for examplem $A \in \lbrace 0,1 \rbrace$ in a binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population is administered the insulin, while $A=0$ is for not administered.
+Suppose $Y$ is an outcome random variable, $A$ is a indicator variable to represent the presence of treatment, for example $A \in \lbrace 0,1 \rbrace$ in binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population is administered the insulin, while $A=0$ is for not administered.
 
-Also, suppose $Y_{a}$ is an outcome when the treatment is SET to $a$; for example, $Y_{a=1}$ is an outcome random variable when the treatment class is $1$ regardless of the actual treatment applied in observing $Y$. This means the random variable $Y_{a=1} | A=0$ can exist and this represents the 'what-if' value of $Y$ in a sense that it is the random variable under the condition of not being treated ( $A=0$ ) but what if it was treated ( $a=1$ ). 
+Also, suppose $Y_{a}$ is an outcome when the treatment is SET to $a$; for example, $Y_{a=1}$ is an outcome random variable when the treatment class is $1$ regardless of the actual treatment applied in observing $Y$. This means the random variable $Y_{a=1} | A=0$ can exist and this represents the 'what-if' value of $Y$ in a sense that it is the random variable under the condition of not being treated ( $A=0$ ) but what if it was treated ( $a=1$ ).
 
-This random variable $Y_{a=1} | A=0$ is analogous to the cell *(2)* in the matrix of "Concept of Counterfactual" section above.
-
-For example, $Y_{a=1} | A=0$ can give the random variable of *HbA1C* for the patient group who was not administered the insulin but in the virtual case when they had been administered. 
+For example, $Y_{a=1} | A=0$ can give the random variable of *HbA1C* for the patient group who was not administered the insulin but in the virtual case if they had been administered. 
 
 Here the $ATE$ (Average Treatment Effect) and $ATT$ (Average Treatment Effect of the Treated) are introduced.
 
@@ -78,7 +76,7 @@ $<br \ >$
 
 $ATE \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}]$
 
-This represents the expectation of the effect of the treatment in a sense it takes the difference of the outcome random variables, the former is if the whole population was set in the treatment group while the latter is if set in the non-treatment group.
+This represents the expectation of the effect of the treatment in a sense it takes the difference of the outcome random variables, the former is if whole population was set in the treated group while the latter is if set in the non-treated group.
 
 $<br \ >$
 
@@ -86,7 +84,7 @@ $<br \ >$
 
 $ATT \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}|A=1]$
 
-This represents the similar expectation of effect to *ATE* with the only difference in the random variable in interest being only from the population who was treated because it is conditioned by $A=1$.
+This represents the similar expectatino of effect to *ATE* with the only difference in the random variable in interest are only from the population who was actually treated because it is conditioned by $A=1$.
 
 $<br \ >$
 
@@ -106,7 +104,7 @@ If the treatment assignment is randomly controlled where the assignment of $A$ i
 
 $\mathbb{E}[Y|(A=1) \ - \ Y|(A=0)] \ = \ \mathbb{E}[Y|(A=1)] \ - \ \mathbb{E}[Y|(A=0)]$.
 
-In the insulin example, this happens when the patients given insulin are selected randomly with no influence from any attributional factors to the selection process such as the disease severity, age, etc. In this situation, we can get an unbiased estimate of the effect of insulin by just taking the average difference of *HbA1C* in the population assigned to the treatment group and that in the population assigned to the non-treatment group.
+In the insulin example, this happens when the patients given insulin are the ones selected randomly with no influence from any attributional factors such as the disease severity, age, or etc. In this situation, we can get the unbiased estimate of effect of insulin by just taking the average of difference of *HbA1C* in the population assigned to treatment group and that in the population assigned to non-treatment group.
 
 $<br \ >$
 
@@ -118,7 +116,7 @@ When $A$ is assigned randomly, $Y_{a} \perp A$ for $a \ \in \ \{0,1\}$. This lea
 
 $Y_{a=1} \ = \ Y_{a=1}|(A=1) \ = \ Y_{a=1}|(A=0)$ and $Y_{a=0} \ = \ Y_{a=0}|(A=0) \ = \ Y_{a=0}|(A=1)$, (also known as *exchangeability*).
 
-Here, under the RCT setup, we can say the assignment of treatment/non-treatment group $A=a'$ is equalized to the use of set notation $Y_{a=a'}$ (in RCT, two groups of subjects are 'forced' to comply the individual assignment).
+Here, under the RCT set up, we can say the assignment of treatment/non-treatment group $A=a'$ is equivalized to the use of set notation $Y_{a=a'}$ (in RCT, two groups of sujects are 'forced' to comply with the individual assignment).
 
 This should result in:
 
@@ -138,20 +136,19 @@ ATE \ & = \ \mathbb{E}[Y_{a=1} \ - \ Y_{a=0}] \\
 \end{aligned}
 $$
 
+Where the second line to the third uses *exchangeability* and the third to the fourth uses *consistency*.
 
-Where the transform from the second line to the third uses *exchangeability* and from the third to the fourth uses *consistency*.
-
-Now, it proves the $ATE \ = \ treatment \ effect \ calculated \ under \ RCT$
+Now, it proves that $ATE \ = \ treatment \ effect \ calculated \ under \ RCT$
 
 ------------------
 
 $<br \ >$
 
-This indicates that under the RCT setup, it is possible to say that the difference in plain averages of each group (treatment/non-treatment (control)) directly becomes the unbiased estimate of the ATE.
+This indicates that under the RCT set up, it is possible to say that the difference in plain averages of each group (treatment/non-treatment (control)) directly becomes the unbiased estimate of the ATE.
 
 $<br \ >$
 
-Although RCT indeed solves the issue in the estimate of treatment effect, it is not always possible to do RCT in real life for various reasons in costs, ethics, etc. Also, let's take the fact into account that there is already a lot of data collected through non-RCT contexts ready for being utilized without further data collection efforts. That is why the studies on how to get the value of treatment effect through observational data are appreciated.
+Although it is true that RCT solves the issue in the estimate of treatment effect, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc. Also, let's take the fact into account that there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated.
 
 $<br \ ><br \ >$
 
@@ -177,18 +174,34 @@ Where the $\boldsymbol{1}\_{A_i=a'}$ represents an indicator function to give $1
 
 $<br \ >$
 
-This *IPWE* is an unbiased estimator of $Y_{a=a'}$, namely $\mathbb{E}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$.
+This *IPWE* is an unbiased estimator of $Y_{a=a'}$, namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$.
 
-Then, we can conclude we can estimate the *ATE* such that
+Then, we can conclude the *ATE* can be estimated such that
 
-$ ATE \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}] \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
+
+
+$<br \ ><br \ ><br \ ><br \ >$
+
+$Y_{a=1}-Y_{a=0} \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
+
 
 
 $<br \ >$
 
-Here's the proof of this property:
+Here's the proof of this $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$:
 
 ------------------
+
+Giving the proof only in case of $a'=1$. $a'=0$ is just symmetric and can be proved similarly.
+
+$$
+\begin{aligned}
+\mathbb{E}[\hat{\mu}^{IPWE}\_{1}] \ & = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]}] \\
+& = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{ \mathbb{E}[\boldsymbol{1}\_{A_i=1}]}{P[A_i=1]}
+\end{aligned}
+$$
+
+
 
 XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
 
@@ -202,6 +215,7 @@ $<br \ ><br \ >$
 
 # Reference
 
-- "Causal Inference: What If", Miguel A. Hernan, James M. Robins, CRC Press, https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
-- "CAUSALITY", Ricardo Silva, Cambridge Advanced Tutorial Lecture Series on Machine Learning, http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf
+- [1] "Causal Inference: What If", Miguel A. Hernan, James M. Robins, CRC Press, https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
+- [2] "CAUSALITY", Ricardo Silva, Cambridge Advanced Tutorial Lecture Series on Machine Learning, http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf
+- [3] "Stratification and weighting via the propensity score in estimation of causal treatment effects: a comparative study", Jared K Lunceford, Marie Davidian, 2004, STATISTICS IN MEDICINE, https://pubmed.ncbi.nlm.nih.gov/15351954/
 
