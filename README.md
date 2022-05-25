@@ -112,7 +112,7 @@ Here's the proof of this property:
 
 ------------------
 
-When $A$ is assigned randomly, $Y_{a} \perp A$ for $a \ \in \ \{0,1\}$. This leads to:
+When $A$ is assigned randomly, $Y_{a} \perp A$ for $a \ \in \ \lbrace 0,1 \rbrace$. This leads to:
 
 $Y^{a=1} \ = \ Y^{a=1}|(A=1) \ = \ Y^{a=1}|(A=0)$ and $Y^{a=0} \ = \ Y^{a=0}|(A=0) \ = \ Y^{a=0}|(A=1)$, (also known as *exchangeability*).
 
@@ -120,7 +120,7 @@ Here, under the RCT set up, we can say the assignment of treatment/non-treatment
 
 This should result in:
 
-$Y^{a} \ = \ Y$ for $a=$ 0 or 1. (also known as *consistency*)
+$Y^{a}|(A=a) \ = \ Y|(A=a)$ when $a \ \in \lbrace 0,  1 \rbrace$. (also known as *consistency*)
 
 $<br \ >$
 
