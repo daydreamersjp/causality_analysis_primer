@@ -64,9 +64,9 @@ $<br \ ><br \ >$
 
 Suppose $Y$ is an outcome random variable, $A$ is a indicator variable to represent the presence of treatment, for example $A \in \lbrace 0,1 \rbrace$ in binary treatment case. For example, $A=1$ is a condition to represent the diabetes patient population is administered the insulin, while $A=0$ is for not administered.
 
-Also, suppose $Y_{a}$ is an outcome when the treatment is SET to $a$; for example, $Y_{a=1}$ is an outcome random variable when the treatment class is $1$ regardless of the actual treatment applied in observing $Y$. This means the random variable $Y_{a=1} | A=0$ can exist and this represents the 'what-if' value of $Y$ in a sense that it is the random variable under the condition of not being treated ( $A=0$ ) but what if it was treated ( $a=1$ ).
+Also, suppose $Y^{a}$ is an outcome when the treatment is SET to $a$; for example, $Y^{a=1}$ is an outcome random variable when the treatment class is $1$ regardless of the actual treatment applied in observing $Y$. This means the random variable $Y^{a=1} | A=0$ can exist and this represents the 'what-if' value of $Y$ in a sense that it is the random variable under the condition of not being treated ( $A=0$ ) but what if it was treated ( $a=1$ ).
 
-For example, $Y_{a=1} | A=0$ can give the random variable of *HbA1C* for the patient group who was not administered the insulin but in the virtual case if they had been administered. 
+For example, $Y^{a=1} | A=0$ can give the random variable of *HbA1C* for the patient group who was not administered the insulin but in the virtual case if they had been administered. 
 
 Here the $ATE$ (Average Treatment Effect) and $ATT$ (Average Treatment Effect of the Treated) are introduced.
 
@@ -74,7 +74,7 @@ $<br \ >$
 
 ## *ATE* (Average Treatment Effect)
 
-$ATE \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}]$
+$ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}]$
 
 This represents the expectation of the effect of the treatment in a sense it takes the difference of the outcome random variables, the former is if whole population was set in the treated group while the latter is if set in the non-treated group.
 
@@ -82,7 +82,7 @@ $<br \ >$
 
 ## *ATT* (Average Treatment Effect of the Treated)
 
-$ATT \ = \ \mathbb{E}[Y_{a=1}-Y_{a=0}|A=1]$
+$ATT \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}|A=1]$
 
 This represents the similar expectatino of effect to *ATE* with the only difference in the random variable in interest are only from the population who was actually treated because it is conditioned by $A=1$.
 
@@ -114,13 +114,13 @@ Here's the proof of this property:
 
 When $A$ is assigned randomly, $Y_{a} \perp A$ for $a \ \in \ \{0,1\}$. This leads to:
 
-$Y_{a=1} \ = \ Y_{a=1}|(A=1) \ = \ Y_{a=1}|(A=0)$ and $Y_{a=0} \ = \ Y_{a=0}|(A=0) \ = \ Y_{a=0}|(A=1)$, (also known as *exchangeability*).
+$Y^{a=1} \ = \ Y^{a=1}|(A=1) \ = \ Y^{a=1}|(A=0)$ and $Y^{a=0} \ = \ Y^{a=0}|(A=0) \ = \ Y^{a=0}|(A=1)$, (also known as *exchangeability*).
 
 Here, under the RCT set up, we can say the assignment of treatment/non-treatment group $A=a'$ is equivalized to the use of set notation $Y_{a=a'}$ (in RCT, two groups of sujects are 'forced' to comply with the individual assignment).
 
 This should result in:
 
-$Y_{a} \ = \ Y$ for $a=$ 0 or 1. (also known as *consistency*)
+$Y^{a} \ = \ Y$ for $a=$ 0 or 1. (also known as *consistency*)
 
 $<br \ >$
 
@@ -128,9 +128,9 @@ Therefore,
 
 $$
 \begin{aligned}
-ATE \ & = \ \mathbb{E}[Y_{a=1} \ - \ Y_{a=0}] \\
-& = \ \mathbb{E}[Y_{a=1}] \ - \ \mathbb{E}[Y_{a=0}] \\
-& = \ \mathbb{E}[Y_{a=1}|A=1] \ - \ \mathbb{E}[Y_{a=0}|A=0] \\
+ATE \ & = \ \mathbb{E}[Y^{a=1} \ - \ Y^{a=0}] \\
+& = \ \mathbb{E}[Y^{a=1}] \ - \ \mathbb{E}[Y^{a=0}] \\
+& = \ \mathbb{E}[Y^{a=1}|A=1] \ - \ \mathbb{E}[Y^{a=0}|A=0] \\
 & = \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0] \\
 & = \ treatment \ effect \ calculated \ under \ RCT
 \end{aligned}
@@ -174,7 +174,7 @@ Where the $\boldsymbol{1}\_{A_i=a'}$ represents an indicator function to give $1
 
 $<br \ >$
 
-This *IPWE* is an unbiased estimator of $Y_{a=a'}$, namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$.
+This *IPWE* is an unbiased estimator of $Y^{a=a'}$, namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y^{a=a'}$.
 
 Then, we can conclude the *ATE* can be estimated such that
 
@@ -182,13 +182,13 @@ Then, we can conclude the *ATE* can be estimated such that
 
 $<br \ ><br \ ><br \ ><br \ >$
 
-$Y_{a=1}-Y_{a=0} \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
+$Y^{a=1}-Y^{a=0} \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
 
 
 
 $<br \ >$
 
-Here's the proof of this $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y_{a=a'}$:
+Here's the proof of this $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y^{a=a'}$:
 
 ------------------
 
