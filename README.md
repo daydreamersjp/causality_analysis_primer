@@ -188,7 +188,7 @@ $Y^{a=1}-Y^{a=0} \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \
 
 $<br \ >$
 
-Here's the proof of this $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y^{a=a'}$:
+Here's the proof::
 
 ------------------
 
