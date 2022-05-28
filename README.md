@@ -172,8 +172,8 @@ $$Y \perp A | X$$
 This property is called *conditional exchangeability*. Compared with the *exchangeability* in the RCT section above, it means the RCT-like situation is happening once stratified by $X$.
 
 Some examples of the $X$ are:
-- When the physician decides the administration of insulin by patients' severity class ($X$), the administration of insulin ($A$) is no longer dependent of the possible improvement of HbA1c ($Y$) once stratified by the severity class.
-- When the coupon distribution plan is determined by the customer segmentation defined by each customer's age, gender, and frequency in past purchases ($X$), the coupon price ($A$) is no longer dependent of the possible conversion probability ($Y$).
+- When the physician decides the administration of insulin by patients' severity class ($X$), the administration of insulin ($A$) is no longer dependent of the possible improvement of HbA1c ($Y$), once stratified by the severity class.
+- When the coupon distribution plan is determined by the customer segmentation defined by each customer's age, gender, and frequency in past purchases ($X$), the coupon price ($A$) is no longer dependent of the possible conversion probability ($Y$), once stratified by the customer segmentation.
 
 As in the second example, $X$ can contains multiple variables to control $A$ and $Y$.
 
@@ -190,11 +190,11 @@ $<br \ >$
 ## Inverse provability weighting
 When we can get the probabilities of the assignment, i.e. $P[A=1|X]$ and $P[A=0|X]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
-Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) for $a=a'$ is given by:
+Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i}, X_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) is given by:
 
-$\hat{\mu}^{IPWE}\_{a'} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a'}}{P[A_i=a']}$
+$\hat{\mu}^{IPWE}\_{a} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a]}$
 
-Where the $\boldsymbol{1}\_{A_i=a'}$ represents an indicator function to give $1$ when $A_i=a'$ and $0$ otherwise.
+Where the $\boldsymbol{1}\_{A_i=a}$ represents an indicator function to give $1$ when $A_i=a'$ and $0$ otherwise.
 
 $<br \ >$
 
@@ -232,6 +232,10 @@ XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 ------------------
 
 $<br \ >$
+
+## Example applicaton of inverse provability weighting
+
+XXXXXXXXXXXXXXXXXXXX
 
 ## Estimating probability -- propensity score
 When $P[A=a|X]$ is not given, it has to be estimated. In general, the estimation is done by logistic regression, but there are also applications of machine learning methodologies here. Once $\hat{P}[A=a|X]$ is estimated, the other procedures are the same. 
