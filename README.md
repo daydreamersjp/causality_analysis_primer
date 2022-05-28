@@ -211,7 +211,10 @@ Now, let look at the $\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{
 All of these can be given from the observation data, then we can estimate the *ATE* from the observation.
 
 
-Similarly, the 
+Similarly, the *ATT* can be estimated by:
+
+$ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}|A=1] \ = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \boldsymbol{1}\_{A_i=1} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \boldsymbol{1}\_{A_i=0} \frac{P[A_i=1|X_i]}{P[A_i=0|X_i]}]$
+
 
 $<br \ ><br \ ><br \ ><br \ >$
 
