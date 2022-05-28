@@ -12,7 +12,7 @@ Although "the number of people who drowned by falling into the swimming pool" is
 
 Therefore, this is an easy example of correlation != causation, period.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 Although it is true, there is further implication in the data science field: it matters when we want to know the **influence by the actions changing a part of the system**. In the example above, <ins>decreasing the Nicolas Cage's films does not lead to the decrease in the pool accidents</ins> (again no proof but in common sense.)
 
@@ -24,8 +24,8 @@ But there are many cases that this kind of effect is what we actually want to kn
 
 This is also known as *do-operator* in the causality analysis <a href="http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf">(a reference here)</a> like $E[Y=y | A]$ vs. $E[Y=y | do(A)]$. No matter how it is called, this difference is something we should carefully concern and distinguish.
 
-
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Concept of Counterfactual
 
@@ -45,11 +45,12 @@ Since the information of *(2)* and *(3)* does not appear in the real world, it i
 
 A guru of causality analysis, Donald Rubin called this counterfactual aspect of the observed data as "the fundamental problem of causal inference" <a href="https://en.wikipedia.org/wiki/Rubin_causal_model#The_fundamental_problem_of_causal_inference">(Wikipedia)</a>
 
-$<br \ >$
+<p>&nbsp;</p>
 
 As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strengh of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>, yet because RCT is not always possible to conduct, the importance of causality analysis still remains. We will discuss more in the later sections.
 
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Approaches to Reach Couterfactual in Special Circumstances
 - DID
@@ -58,7 +59,8 @@ $<br \ ><br \ >$
 
 XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
 
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # ATE (Average Treatment Effect) and ATT (Average Treatment Effect of the Treated)
 
@@ -70,7 +72,7 @@ For example, $Y^{a=1} | A=0$ can give the random variable of *HbA1C* for the pat
 
 Here the $ATE$ (Average Treatment Effect) and $ATT$ (Average Treatment Effect of the Treated) are introduced.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 ## *ATE* (Average Treatment Effect)
 
@@ -78,7 +80,7 @@ $ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}]$
 
 This represents the expectation of the effect of the treatment in a sense it takes the difference of the outcome random variables, the former is if whole population was set in the treated group while the latter is if set in the non-treated group.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 ## *ATT* (Average Treatment Effect of the Treated)
 
@@ -86,7 +88,7 @@ $ATT \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}|A=1]$
 
 This represents the similar expectatino of effect to *ATE* with the only difference in the random variable in interest are only from the population who was actually treated because it is conditioned by $A=1$.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 ## *ATE* vs. *ATT* in an example
 
@@ -96,7 +98,8 @@ Let's describe the difference of *ATE* and *ATT* in English with an example of i
 
 - *ATT* is the expected effect of insulin against the population who was actually given insulin, and disregarding the population who was not given insulin--supposedly they are severer diabetic patients because the physicians found out they should take the insulin.
 
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Rondomized control trial
 
@@ -106,7 +109,7 @@ $\mathbb{E}[Y|(A=1) \ - \ Y|(A=0)] \ = \ \mathbb{E}[Y|(A=1)] \ - \ \mathbb{E}[Y|
 
 In the insulin example, this happens when the patients given insulin are the ones selected randomly with no influence from any attributional factors such as the disease severity, age, or etc. In this situation, we can get the unbiased estimate of effect of insulin by just taking the average of difference of *HbA1C* in the population assigned to treatment group and that in the population assigned to non-treatment group.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 Here's the proof of this property:
 
@@ -122,7 +125,7 @@ This should result in:
 
 $Y^{a}|(A=a) \ = \ Y|(A=a)$ when $a \ \in \lbrace 0,  1 \rbrace$. (also known as *consistency*)
 
-$<br \ >$
+<p>&nbsp;</p>
 
 Therefore,
 
@@ -142,15 +145,16 @@ Now, it proves that $ATE \ = \ treatment \ effect \ calculated \ under \ RCT$
 
 ------------------
 
-$<br \ >$
+<p>&nbsp;</p>
 
 This indicates that under the RCT set up, it is possible to say that the difference in plain averages of each group (treatment/non-treatment (control)) directly becomes the unbiased estimate of the ATE.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 Although it is true that RCT solves the issue in the estimate of treatment effect, it is not always possible to do RCT in real life for various reasons in costs, ethics, and etc. Also, let's take the fact into account that there is already a lot of data collected through non-RCT context ready for being utilized without further data collection efforts. That is why the studies in how to get the value of treatment effect through observational data are appreciated.
 
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Population Bias as A Type of Counterfactuality
 
@@ -160,7 +164,8 @@ The challenge appears though when using observational data. Primarily, the lack 
 
 In general, this limitation is just called **population bias**. Next section shows one of the possible approaches we can take to tackle this limitation and get the unbiased estimate of the treatment effect.
 
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Inverse Probability Weighting
 
@@ -177,7 +182,7 @@ Some examples of the $X$ are:
 
 As in the second example, $X$ can contains multiple variables to control $A$ and $Y$.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 ## Assumptions of inverse probability weighting
 The inverse probability weighting depends on the following assumptions:
@@ -185,7 +190,7 @@ The inverse probability weighting depends on the following assumptions:
 - **Consistency**: the same as mentioned in the RCT section above. This assumes *$Y^{a}=Y|A=a$*. This means that the observed $Y$ conditioned by $A=a$ is the same as the $Y$ intentionally controled at $A=a$ (which is $$Y^{a}$. This may sound weird or an matter of course, but let's think of the following example.If $A=1$ represents the presence of regular excercises, and $Y$ the weight of the person. $Y|A=1$ is the weight when they regularly works out, while $Y^{a=1}$ is the weight they are assigned to be a workout group. They can be very different in a way of how frequent, how hard, how long etc., the former excercise is by the person's preference, but the latter is by the instruction in the experiment usually in exchange of rewards for the participation. It is not usually to the effect to be consistent. The consistency assumtion still assume they are the same.
 - **Positivity**: This assumes $P[A=a|X=x] > 0$ for any $a$ and $x$ where $P[X=x]>0$. This is the scenario where every assignment happens in the any possible $X$.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 ## Inverse provability weighting
 When we can get the probabilities of the assignment, i.e. $P[A=1|X]$ and $P[A=0|X]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
@@ -198,10 +203,10 @@ $\hat{\mu}^{IPWE}\_{a} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\bold
 
 Where the $\boldsymbol{1}\_{A_i=a}$ represents an indicator function to give $1$ when $A_i=a$ and $0$ otherwise.
 
-$<br \ >$
+<p>&nbsp;</p>
 
 This *IPWE* is an unbiased estimator of the mean of $Y^{a}$, which is $\mathbb{E}[Y^{a}]$; namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$.
-
+(A proof is to be given later.)
 Then, we can conclude the *ATE* can be estimated such that:
 
 $ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}] \ = \ \mathbb{E}[\hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0}] \ = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1|X_i]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0|X_i]}]$
@@ -216,25 +221,12 @@ Similarly, the *ATT* can be estimated by:
 $ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}|A=1] \ = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \boldsymbol{1}\_{A_i=1} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \boldsymbol{1}\_{A_i=0} \frac{P[A_i=1|X_i]}{P[A_i=0|X_i]}]$
 
 
-$<br \ ><br \ ><br \ ><br \ >$
-
-
-
-
-$<br \ >$
+<p>&nbsp;</p>
 
 Here's the proof of $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$:
 
 ------------------
 
-Giving the proof only in case of $a'=1$. $a'=0$ is just symmetric and can be proved similarly.
-
-$$
-\begin{aligned}
-\mathbb{E}[\hat{\mu}^{IPWE}\_{1}] \ & = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]}] \\
-& = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{ \mathbb{E}[\boldsymbol{1}\_{A_i=1}]}{P[A_i=1]}
-\end{aligned}
-$$
 
 
 
@@ -242,7 +234,7 @@ XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 
 ------------------
 
-$<br \ >$
+<p>&nbsp;</p>
 
 ## Example applicaton of inverse provability weighting
 
@@ -253,12 +245,13 @@ When $P[A=a|X]$ is not given, it has to be estimated. This way we are given the 
 
 Some new discussions can appear here: how much the estimation of the $\hat{P}[A=a|X]$ is reliable or what if $\hat{P}[A=a|X]$ is super close to zero (=the weighing in IPWE gets too large). To tackle those possibilies, there are some variants proposed, which this post does not include because it is completely out of scope.
 
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Double Machine Learning
 
-
-$<br \ ><br \ >$
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
 # Reference
 
