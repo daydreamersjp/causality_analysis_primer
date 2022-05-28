@@ -181,38 +181,46 @@ $<br \ >$
 
 ## Assumptions of inverse probability weighting
 The inverse probability weighting depends on the following assumptions:
-- Conditional exchangeability: as mentioned above.
-- Consistency: the same as mentioned in the RCT section above. This assumes *$Y^{a}=Y|A=a$*. This means that the observed $Y$ conditioned by $A=a$ is the same as the $Y$ intentionally controled at $A=a$ (which is $$Y^{a}$. This may sound weird or an matter of course, but let's think of the following example.If $A=1$ represents the presence of regular excercises, and $Y$ the weight of the person. $Y|A=1$ is the weight when they regularly works out, while $Y^{a=1}$ is the weight they are assigned to be a workout group. They can be very different in a way of how frequent, how hard, how long etc., the former excercise is by the person's preference, but the latter is by the instruction in the experiment usually in exchange of rewards for the participation. It is not usually to the effect to be consistent. The consistency assumtion still assume they are the same.
-- Positivity: This assumes $P[A=a|X=x] > 0$ for any $a$ and $x$ where $P[X=x]>0$. This is the scenario where every assignment happens in the any possible $X$.
+- **Conditional exchangeability**: as mentioned above.
+- **Consistency**: the same as mentioned in the RCT section above. This assumes *$Y^{a}=Y|A=a$*. This means that the observed $Y$ conditioned by $A=a$ is the same as the $Y$ intentionally controled at $A=a$ (which is $$Y^{a}$. This may sound weird or an matter of course, but let's think of the following example.If $A=1$ represents the presence of regular excercises, and $Y$ the weight of the person. $Y|A=1$ is the weight when they regularly works out, while $Y^{a=1}$ is the weight they are assigned to be a workout group. They can be very different in a way of how frequent, how hard, how long etc., the former excercise is by the person's preference, but the latter is by the instruction in the experiment usually in exchange of rewards for the participation. It is not usually to the effect to be consistent. The consistency assumtion still assume they are the same.
+- **Positivity**: This assumes $P[A=a|X=x] > 0$ for any $a$ and $x$ where $P[X=x]>0$. This is the scenario where every assignment happens in the any possible $X$.
 
 $<br \ >$
 
 ## Inverse provability weighting
 When we can get the probabilities of the assignment, i.e. $P[A=1|X]$ and $P[A=0|X]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
-Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i}, X_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) is given by:
+Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i}, X_{i}, P[A_i|X_i] ) \rbrace^{n}\_{i=1}$. You may wonder what can bring us $P[A_i|X_i]$ as a part of the data, but let's take it as an assumption for now; actually it is not rediculous because this can easily happen when we control the probability. For example, the marketing team may decide whether they send a marketing mail or not based on $X$, stochastically in a probability $P[A|X]$, which is determined by the customer's segment $X$.
 
-$\hat{\mu}^{IPWE}\_{a} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a]}$
+The Inversed Probability Weighted Estimator (*IPWE*) is given by:
 
-Where the $\boldsymbol{1}\_{A_i=a}$ represents an indicator function to give $1$ when $A_i=a'$ and $0$ otherwise.
+$\hat{\mu}^{IPWE}\_{a} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}$
+
+Where the $\boldsymbol{1}\_{A_i=a}$ represents an indicator function to give $1$ when $A_i=a$ and $0$ otherwise.
 
 $<br \ >$
 
-This *IPWE* is an unbiased estimator of $Y^{a=a'}$, namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a'}] \ = \ Y^{a=a'}$.
+This *IPWE* is an unbiased estimator of the mean of $Y^{a}$, which is $\mathbb{E}[Y^{a}]$; namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$.
 
-Then, we can conclude the *ATE* can be estimated such that
+Then, we can conclude the *ATE* can be estimated such that:
+
+$ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}] \ = \ \mathbb{E}[\hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0}] \ = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1|X_i]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0|X_i]}]$
+
+Now, let look at the $\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}$ carefully. This is an average of $Y_{i}$ weighted by $\frac{\boldsymbol{1}\_{A_i=a|X}}{P[A_i=a|X_i]}$. The numerator of this weighing factor says we can ignore the case we don't observe because it is zero any way, and the denominator says that yet we have to scale up the observed $Y_i$ by a factor of inverse probability of $P[A_i=a|X_i]$. 
+
+All of these can be given from the observation data, then we can estimate the *ATE* from the observation.
 
 
+Similarly, the 
 
 $<br \ ><br \ ><br \ ><br \ >$
 
-$Y^{a=1}-Y^{a=0} \ = \ \hat{\mu}^{IPWE}\_{1} \ - \ \hat{\mu}^{IPWE}\_{0} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=1}}{P[A_i=1]} \ - \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=0}}{P[A_i=0]}$
 
 
 
 $<br \ >$
 
-Here's the proof::
+Here's the proof of $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$:
 
 ------------------
 
@@ -238,7 +246,7 @@ $<br \ >$
 XXXXXXXXXXXXXXXXXXXX
 
 ## Estimating probability -- propensity score
-When $P[A=a|X]$ is not given, it has to be estimated. In general, the estimation is done by logistic regression, but there are also applications of machine learning methodologies here. Once $\hat{P}[A=a|X]$ is estimated, the other procedures are the same. 
+When $P[A=a|X]$ is not given, it has to be estimated. This way we are given the data $\lbrace ( Y_{i}, A_{i}, X_{i}) \rbrace^{n}_{i=1}$. In general, the estimation is done by logistic regression, but there are also applications of machine learning methodologies here. Once $\hat{P}[A=a|X]$ is estimated, the other procedures are the same. 
 
 Some new discussions can appear here: how much the estimation of the $\hat{P}[A=a|X]$ is reliable or what if $\hat{P}[A=a|X]$ is super close to zero (=the weighing in IPWE gets too large). To tackle those possibilies, there are some variants proposed, which this post does not include because it is completely out of scope.
 
