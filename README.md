@@ -164,6 +164,7 @@ $<br \ ><br \ >$
 
 # Inverse Probability Weighting
 
+## Covariates *X*
 Here, let's introduce the covariates $X$, which controls the bias in population and if stratified by it, the population becomes homogenenous in the assignment $A$ and the assignment $A$ is independent of the statistics in interest, $Y$. Formalized, this is property is written as:
 
 $$Y \perp A | X$$
@@ -178,6 +179,15 @@ As in the second example, $X$ can contains multiple variables to control $A$ and
 
 $<br \ >$
 
+## Assumptions of inverse probability weighting
+The inverse probability weighting depends on the following assumptions:
+- Conditional exchangeability: as mentioned above.
+- Consistency: the same as mentioned in the RCT section above. This assumes *$Y^{a}=Y|A=a$*. This means that the observed $Y$ conditioned by $A=a$ is the same as the $Y$ intentionally controled at $A=a$ (which is $$Y^{a}$. This may sound weird or an matter of course, but let's think of the following example.If $A=1$ represents the presence of regular excercises, and $Y$ the weight of the person. $Y|A=1$ is the weight when they regularly works out, while $Y^{a=1}$ is the weight they are assigned to be a workout group. They can be very different in a way of how frequent, how hard, how long etc., the former excercise is by the person's preference, but the latter is by the instruction in the experiment usually in exchange of rewards for the participation. It is not usually to the effect to be consistent. The consistency assumtion still assume they are the same.
+- Positivity: This assumes $P[A=a|X=x] > 0$ for any $a$ and $x$ where $P[X=x]>0$. This is the scenario where every assignment happens in the any possible $X$.
+
+$<br \ >$
+
+## Inverse provability weighting
 When we can get the probabilities of the assignment, i.e. $P[A=1|X]$ and $P[A=0|X]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
 Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) for $a=a'$ is given by:
@@ -223,6 +233,14 @@ XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 
 $<br \ >$
 
+## Estimating probability -- propensity score
+When $P[A=a|X]$ is not given, it has to be estimated. In general, the estimation is done by logistic regression, but there are also applications of machine learning methodologies here. Once $\hat{P}[A=a|X]$ is estimated, the other procedures are the same. 
+
+Some new discussions can appear here: how much the estimation of the $\hat{P}[A=a|X]$ is reliable or what if $\hat{P}[A=a|X]$ is super close to zero (=the weighing in IPWE gets too large). To tackle those possibilies, there are some variants proposed, which this post does not include because it is completely out of scope.
+
+$<br \ ><br \ >$
+
+# Double Machine Learning
 
 
 $<br \ ><br \ >$
