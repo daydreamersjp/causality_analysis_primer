@@ -164,7 +164,9 @@ $<br \ ><br \ >$
 
 # Inverse Probability Weighting
 
-When we can get the probabilities of the assignment, i.e. $P[A=1]$ and $P[A=0]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
+Let introduce the covariates $X$, which controls the 
+
+When we can get the probabilities of the assignment, i.e. $P[A=1|X]$ and $P[A=0|X]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
 Under the observational data, we have a set of observational data, $\lbrace ( Y_{i}, A_{i} ) \rbrace^{n}_{i=1}$. The Inversed Probability Weighted Estimator (*IPWE*) for $a=a'$ is given by:
 
