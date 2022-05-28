@@ -164,7 +164,19 @@ $<br \ ><br \ >$
 
 # Inverse Probability Weighting
 
-Let introduce the covariates $X$, which controls the 
+Here, let's introduce the covariates $X$, which controls the bias in population and if stratified by it, the population becomes homogenenous in the assignment $A$ and the assignment $A$ is independent of the statistics in interest, $Y$. Formalized, this is property is written as:
+
+$$Y \perp A | X$$
+
+This property is called *conditional exchangeability*. Compared with the *exchangeability* in the RCT section above, it means the RCT-like situation is happening once stratified by $X$.
+
+Some examples of the $X$ are:
+- When the physician decides the administration of insulin by patients' severity class ($X$), the administration of insulin ($A$) is no longer dependent of the possible improvement of HbA1c ($Y$) once stratified by the severity class.
+- When the coupon distribution plan is determined by the customer segmentation defined by each customer's age, gender, and frequency in past purchases ($X$), the coupon price ($A$) is no longer dependent of the possible conversion probability ($Y$).
+
+As in the second example, $X$ can contains multiple variables to control $A$ and $Y$.
+
+$<br \ >$
 
 When we can get the probabilities of the assignment, i.e. $P[A=1|X]$ and $P[A=0|X]$, it is possible to get the unbiased estimate of *ATE* and *ATT* from the observational data. This method is called Inversed Probability Weighting.
 
