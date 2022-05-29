@@ -292,4 +292,5 @@ XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 - [1] "Causal Inference: What If", Miguel A. Hernan, James M. Robins, CRC Press, https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
 - [2] "CAUSALITY", Ricardo Silva, Cambridge Advanced Tutorial Lecture Series on Machine Learning, http://mlg.eng.cam.ac.uk/zoubin/tut06/cambridge_causality.pdf
 - [3] "Stratification and weighting via the propensity score in estimation of causal treatment effects: a comparative study", Jared K Lunceford, Marie Davidian, 2004, STATISTICS IN MEDICINE, https://pubmed.ncbi.nlm.nih.gov/15351954/
+- [4] "Notes on The Consistency of Inverse Probability Weighting", Zhenke Wu, 2016, https://zhenkewu.com/assets/pdfs/slides/teaching/2016/biostat830/lecture_notes/lecture21_ipw.html
 
