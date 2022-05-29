@@ -156,7 +156,7 @@ Although it is true that RCT solves the issue in the estimate of treatment effec
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-# Population Bias as A Type of Counterfactuality
+# Population Bias as a Type of Counterfactuality
 
 The challenge appears though when using observational data. Primarily, the lack of $Y_{a} \perp A$ or *exchangeability* is an issue. In plain English, this means the outcome for the treated group and the outcome for the untreated group are not equivalent. For examples:
 - the effect of insulin is not the same to the patients who are administered and the ones who are not; because it depends on the doctors' discretions and the former patient group is supposedly under severer condition than the latter.
