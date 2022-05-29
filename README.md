@@ -278,6 +278,13 @@ When $P[A=a|X]$ is not given, it has to be estimated. This way we are given the 
 Some new discussions can appear here: how much the estimation of the $\hat{P}[A=a|X]$ is reliable or what if $\hat{P}[A=a|X]$ is super close to zero (=the weighing in IPWE gets too large). To tackle those possibilies, there are some variants proposed, which this post does not include because it is completely out of scope.
 
 <p>&nbsp;</p>
+
+## Modified inverse probability weighting
+When using propensity score particularly, the inversed probability weighting estimator is modified so that the estimator can hold better properties. The modified IPWE is:
+
+$\hat{\mu}^{IPWE'}\_{a} \ = \ (\sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}) \ / \ (\sum\limits_{i=1}^{n} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]})$
+
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 # Double Machine Learning
