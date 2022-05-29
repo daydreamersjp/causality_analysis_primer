@@ -223,11 +223,34 @@ $ATE \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}|A=1] \ = \ \mathbb{E}[\frac{1}{n} \sum\lim
 
 <p>&nbsp;</p>
 
-Here's the proof of $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$:
+Here's the proof of $\mathbb{E}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$:
 
 ------------------
 
+Applying <a href="https://en.wikipedia.org/wiki/Law_of_total_expectation">Law of total expectation</a>,
 
+$\mathbb{E}[Y \frac{\boldsymbol{1}\_{A=a}}{P[A=a|X]}] \ = \ \mathbb{E}[\mathbb{E}\_{X}[Y \frac{\boldsymbol{1}\_{A=a}}{P[A=a|X]} | X]] \ = \ \mathbb{E}[\mathbb{E}\_{X}[Y|X] \cdot \mathbb{E}\_{X}[\frac{\boldsymbol{1}\_{A=a}}{P[A=a|X]} | X]]$
+
+Here, 
+
+$\mathbb{E}\_{X}[\frac{\boldsymbol{1}\_{A=a}}{P[A=a|X]} | X] \ = \ \frac{\mathbb{E}\_{X}[\boldsymbol{1}\_{A=a}|X]}{P[A=a|X]} \ = \ \frac{P[A=a|X]}{P[A=a|X]}$
+
+$$
+\begin{aligned}
+\mathbb{E}[\hat{\mu}^{IPWE}\_{a}] \ & = \ \mathbb{E}[\frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}]
+& = \ \frac{1}{n} \mathbb{E}[\sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}]
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+ATE \ & = \ \mathbb{E}[Y^{a=1} \ - \ Y^{a=0}] \\
+& = \ \mathbb{E}[Y^{a=1}] \ - \ \mathbb{E}[Y^{a=0}] \\
+& = \ \mathbb{E}[Y^{a=1}|A=1] \ - \ \mathbb{E}[Y^{a=0}|A=0] \\
+& = \ \mathbb{E}[Y|A=1] \ - \ \mathbb{E}[Y|A=0] \\
+& = \ treatment \ effect \ calculated \ under \ RCT
+\end{aligned}
+$$
 
 
 XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
