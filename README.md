@@ -205,7 +205,7 @@ Where the $\boldsymbol{1}\_{A_i=a}$ represents an indicator function to give $1$
 
 <p>&nbsp;</p>
 
-This *IPWE* is an unbiased estimator of the mean of $Y^{a}$, which is $\mathbb{E}[Y^{a}]$; namely $\mathbb{E}\_{A}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$.
+This *IPWE* is an unbiased estimator of the mean of $Y^{a}$, which is $\mathbb{E}[Y^{a}]$; namely $\mathbb{E}[\hat{\mu}^{IPWE}\_{a}] \ = \ \mathbb{E}[Y^{a}]$.
 (A proof is to be given later.)
 Then, we can conclude the *ATE* can be estimated such that:
 
