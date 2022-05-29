@@ -266,12 +266,6 @@ Then, the subject was proved.
 
 <p>&nbsp;</p>
 
-## Example applicaton of inverse provability weighting
-
-XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
-
-<p>&nbsp;</p>
-
 ## Estimating probability -- propensity score
 When $P[A=a|X]$ is not given, it has to be estimated. This way we are given the data $\lbrace ( Y_{i}, A_{i}, X_{i}) \rbrace^{n}_{i=1}$. In general, the estimation is done by logistic regression, but there are also applications of machine learning methodologies here. Once $\hat{P}[A=a|X]$ is estimated, the other procedures are the same. 
 
@@ -283,6 +277,17 @@ Some new discussions can appear here: how much the estimation of the $\hat{P}[A=
 When using propensity score particularly, the inversed probability weighting estimator is modified so that the estimator can hold better properties. The modified IPWE is:
 
 $\hat{\mu}^{IPWE'}\_{a} \ = \ (\sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}) \ / \ (\sum\limits_{i=1}^{n} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]})$
+
+With this modification, IPWE estimate is now the weighted average of $Y_i$ value, with the weights of the inversed probability.
+
+<p>&nbsp;</p>
+
+## Use any modeling with weights per inverse probability
+
+Thanks to the modified inverse probability weighting, the inverse probability can be applied as "weights" to the loss function of the any models we would like to train.
+
+For example, we can train linear regression with weighting by inverse probabilities per data point, and interprete the coefficents as the unit 'causal' effect caused by each explanatory variable to the target variable.
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
