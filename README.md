@@ -278,6 +278,8 @@ When using propensity score particularly, the inversed probability weighting est
 
 $\hat{\mu}^{IPWE'}\_{a} \ = \ (\sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}) \ / \ (\sum\limits_{i=1}^{n} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]})$
 
+Here, note that $\mathbb{E}\_A[\frac{\boldsymbol{1}\_{A=a}}{P[A=a|X]}] \ = \ \mathbb{E}\_{X}[\mathbb{E}\_{A|X}[\frac{\boldsymbol{1}\_{A=a}}{P[A=a|X]}|X]] \ = \ \mathbb{E}\_{X}[1] \ = \ 1$
+
 With this modification, IPWE estimate is now the weighted average of $Y_i$ value, with the weights of the inversed probability.
 
 <p>&nbsp;</p>
