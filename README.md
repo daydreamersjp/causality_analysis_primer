@@ -255,15 +255,12 @@ In summary,
 
 $$
 \begin{aligned}
-$\mathbb{E}[\hat{\mu}^{IPWE}\_{a}] \ & = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]} \ = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i}|(A_i=a) \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]} \ \ \ (because \ Y_{i}|(A_i \ne a) \cdot \boldsymbol{1}\_{A_i=a}=0 \ and \ is \ ignored) \\
-& = \ \frac{1}{n} \sum\limits_{i=1}^{n} Y_{i}^{a} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}  \ \ \ (per \ consistency)
+\mathbb{E}[\hat{\mu}^{IPWE}\_{a}] \ & = \ \frac{1}{n} \sum\limits_{i=1}^{n} \mathbb{E}[Y_{i} \frac{\boldsymbol{1}\_{A_i=a}}{P[A_i=a|X_i]}] \ = \ \frac{1}{n} \cdot n \mathbb{E}[Y^a] \\
+& = \ \mathbb{E}[Y^a]
 \end{aligned}
 $$
 
-
-
-
-XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER] 
+Then, the subject was proved.
 
 ------------------
 
@@ -271,7 +268,9 @@ XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 
 ## Example applicaton of inverse provability weighting
 
-XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
+
+<p>&nbsp;</p>
 
 ## Estimating probability -- propensity score
 When $P[A=a|X]$ is not given, it has to be estimated. This way we are given the data $\lbrace ( Y_{i}, A_{i}, X_{i}) \rbrace^{n}_{i=1}$. In general, the estimation is done by logistic regression, but there are also applications of machine learning methodologies here. Once $\hat{P}[A=a|X]$ is estimated, the other procedures are the same. 
@@ -282,6 +281,8 @@ Some new discussions can appear here: how much the estimation of the $\hat{P}[A=
 <p>&nbsp;</p>
 
 # Double Machine Learning
+
+XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
