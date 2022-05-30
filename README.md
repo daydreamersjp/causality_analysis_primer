@@ -294,13 +294,6 @@ For example, we can train linear regression with weighting by inverse probabilit
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-# Double Machine Learning
-
-XXXXXXXXXXXXXXXXXXXX [TO BE ENRICHED LATER]
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
 # Reference
 
 - [1] "Causal Inference: What If", Miguel A. Hernan, James M. Robins, CRC Press, https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
