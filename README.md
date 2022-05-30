@@ -47,7 +47,7 @@ A guru of causality analysis, Donald Rubin called this counterfactual aspect of 
 
 <p>&nbsp;</p>
 
-As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strengh of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>, yet because RCT is not always possible to conduct, the importance of causality analysis still remains. We will discuss more in the later sections.
+As discussed later, RCT is one possible approach to overcome this problem and the method highly ranked in the hierarchy of the strength of the evidence in the scientific research <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">("Hierarchy of evidence")</a>, yet because RCT is not always possible to conduct, the importance of causality analysis still remains. We will discuss more in the later sections.
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -86,7 +86,7 @@ This represents the expectation of the effect of the treatment in a sense it tak
 
 $ATT \ = \ \mathbb{E}[Y^{a=1}-Y^{a=0}|A=1]$
 
-This represents the similar expectatino of effect to *ATE* with the only difference in the random variable in interest are only from the population who was actually treated because it is conditioned by $A=1$.
+This represents the similar expectation of effect to *ATE* with the only difference in the random variable in interest are only from the population who was actually treated because it is conditioned by $A=1$.
 
 <p>&nbsp;</p>
 
